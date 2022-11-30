@@ -1,0 +1,58 @@
+/* navbar */
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: bisque;
+}
+.nav{
+    margin: auto;
+}
+.nav-top{
+    background-color: #1B4F72;
+    color: white; 
+    display: flex;
+}
+.navtop-left{
+    width: 50%;
+}
+.navtop-right{
+    width: 50%;
+    margin-left: 350px;
+}
+ul,li,a{
+    list-style: none;
+    color: white;
+    margin: 5px;
+}
+.nav-botom{
+    display: flex;
+    background-color: #154360;
+}
+img{
+    border-radius: 50%;
+    width: 50px;
+    margin-left: 50px;
+}
+input[type = text]{
+    width: 750px;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 10px 10px 10px 150px;
+}
+/* header */
+.header{
+    display: flex;
+}
+.header-right{
+    width: 85%;
+    background-color: rgb(188, 175, 215);
+}
+.header-left{
+    width: 15%;
+    background-color: darkmagenta;
+
+}
+.header-right{
+    display: flex;
+}
