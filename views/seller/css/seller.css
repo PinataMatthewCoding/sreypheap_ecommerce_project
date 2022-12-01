@@ -1,6 +1,28 @@
 
-
-
+.nav{
+    display: flex;
+    align-items: center;
+    background-color: #154360;
+}
+ul{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    text-transform: uppercase;
+    padding: 10px;
+}
+.nav ul li a:hover{
+    background-color: #092231;
+    color: #e0193a;
+    transition: 0.2s;
+    padding: 10px;
+    border-right: 5px solid black;
+}
+.nav ul li a{
+    background-color: #154360;
+    color: white;
+}
+/* start container */
 * {
     margin: 0;
     padding: 0;
@@ -37,15 +59,16 @@ th {
 }
 form {
     background-image: url(../img/1\ \(5\).jpg);
-   padding: 10px;
-   margin: 15px;
-   width: 90%;
-   height: 400px;
+    padding: 10px;
+    margin: 15px;
+    width: 90%;
+    height: 500px;
 }
-input[type= text]{
+input[type = text],input[type = url] {
     width: 485px;
     padding: 8px;
     border-radius: 5px;
+    outline: none;
 }
 label:hover{
     color: red;
@@ -55,8 +78,7 @@ a {
     padding: 10px;
     color: black;
     cursor: pointer;
-    width: 150px;
-    margin-left: 165px;
+    margin-left: 90px;
     text-align: center;
 }
 a:hover{
@@ -66,10 +88,17 @@ a:hover{
     display: flex;
 }
 .btn>button{
-    width: 170px;
+    width: 240px;
     padding: 9px;
     cursor: pointer;
     border: none;
+    border-radius: 5px;
+}
+.btn a{
+    border-radius: 5px;
+    width: 200px;
+    margin: auto;
+    margin-left: 9%;
 }
 button:hover{
     background-color:#1B4F72 ;
