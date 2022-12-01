@@ -27,7 +27,15 @@ function createNewRecord(name, price, quantity, color, img, edit_delete) {
     
     const buttonDelete = document.createElement("img");
     buttonDelete.src = "img/delete.png"
+    
+    //------------------------------For delete products ------------------------//
+    buttonDelete.addEventListener("click", (e) =>{
+        let index = e.target.parentElement.parentElement.dataset.index;
 
+        productList.splice(index, 1);
+        addProductToLocalStorage("product-name", JSON.stringify(productList));
+        displayProduct();
+    })
 
 
     tdSix.appendChild(buttonEdit);
