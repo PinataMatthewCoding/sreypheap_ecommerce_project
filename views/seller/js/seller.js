@@ -6,27 +6,41 @@ function getProductFromLocalStorage(key) {
     return JSON.parse(localStorage.getItem(key)) ?? [];
 }
 
-function createNewRecord(name, price, quantity, color, img) {
+function createNewRecord(name, price, quantity, color, img, edit_delete) {
     const tr = document.createElement("tr");
     const tdOne = document.createElement("td");
     const tdTwo = document.createElement("td");
     const tdThree = document.createElement("td");
     const tdFour = document.createElement("td");
     const tdFive = document.createElement("td");
+    const tdSix = document.createElement("td");
     tdOne.textContent = name;
     tdTwo.textContent = price;
     tdThree.textContent = quantity;
     tdFour.textContent = color;
     tdFive.textContent = img;
+    tdSix.textContent = edit_delete;
+
+    // ----------------Include img Edit and Delete in edit_delete---------------//
+    const buttonEdit = document.createElement("img");
+    buttonEdit.src = "img/edite.png"
+    
+    const buttonDelete = document.createElement("img");
+    buttonDelete.src = "img/delete.png"
+
+
+
+    tdSix.appendChild(buttonEdit);
+    tdSix.appendChild(buttonDelete);
 
     tr.appendChild(tdOne);
     tr.appendChild(tdTwo);
     tr.appendChild(tdThree);
     tr.appendChild(tdFour);
     tr.appendChild(tdFive);
+    tr.appendChild(tdSix);
 
     return tr;
-
 }
 
 function createTableHeader() {
@@ -36,22 +50,26 @@ function createTableHeader() {
     const thThree = document.createElement("th");
     const thFour = document.createElement("th")
     const thFive = document.createElement("th")
-    thOne.textContent = "name";
+    const thSix = document.createElement("th");
+    
+    thOne.textContent = "name"
     thTwo.textContent = "price";
     thThree.textContent = "quantity";
     thFour.textContent = "color"
     thFive.textContent = "img"
+    thSix.textContent = "edit_delete"
 
     headerRow.appendChild(thOne);
     headerRow.appendChild(thTwo);
     headerRow.appendChild(thThree);
     headerRow.appendChild(thFour);
     headerRow.appendChild(thFive);
+    headerRow.appendChild(thSix);
 
     return headerRow;
 }
+// -------------------------function display on seller -----------------//
 function displayProduct() {
-
     if(tableData.firstElementChild !== null ) {
         document.querySelector("table").remove();
     }
@@ -63,7 +81,6 @@ function displayProduct() {
         newTable.appendChild(row)
     }
     tableData.appendChild(newTable);
-
 }
 
 const result = document.querySelector("#result");
@@ -97,6 +114,6 @@ button.addEventListener("click", (e) => {
     displayProduct();
 })
 
-
-
 document.addEventListener("DOMContentLoaded", () => { displayProduct() })
+
+

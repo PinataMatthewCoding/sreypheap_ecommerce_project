@@ -36,6 +36,7 @@ function createCard(title, price, qty, col, img){
     return card;
 }
 
+//----------------------------------------display products on customer------------------------------//
 function displayProduct() {
     let products = JSON.parse(localStorage.getItem("product-name")) ?? [];
     for (let product of products) {
@@ -43,23 +44,23 @@ function displayProduct() {
         container.appendChild(card);
     }
 }
-
 const container = document.querySelector("#container");
 document.addEventListener("DOMContentLoaded", () => { displayProduct() });
 
-// function searchProducts(event){
-//     const getProduct = searchProductsInput.value.toLowerCase();
-//     const getProductlist = document.querySelector(".title");
-//     for(let i in getProductlist){
-//         getProductlist[i] .parentNode.style.display = "none";
-//         if(getProductlist[i].textContent.toLowerCase() === getProduct || getProductlist[i].textContent.toLowerCase().includes(getProduct)){
-//             getProductlist[i].parentNode.style.display = "block"
-//         }
-//     }
 
-
-// }
-// let searchProductsInput = document
-//     .getElementById("search-products")
-//     .querySelector("input")
-// searchProductsInput.addEventListener("keyup", s)
+// ------------------------------------Customer search productslist----------------------------//
+function searchTask() {
+    let text = search.value.toLowerCase();
+    let tasks = document.querySelectorAll('.card');
+    for (let task of tasks) {
+      let taskTitle = task.firstElementChild.textContent.toLowerCase();
+      if (taskTitle.indexOf(text) === -1) {
+        task.style.display = "none";
+      } else {
+        task.style.display = "flex";
+      }
+    }
+}
+const search =document.getElementById("search");
+search.addEventListener('keyup', searchTask);
+console.log(search)

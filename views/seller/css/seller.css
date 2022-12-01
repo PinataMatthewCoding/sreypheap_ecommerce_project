@@ -104,3 +104,14 @@ button:hover{
     background-color:#1B4F72 ;
     border: none;
 }
+
+.Update{
+    width: 10%;
+    /* height: 100%; */
+    border-radius: 30%;
+}
+
+img{
+    width: 30px;
+    gap: 70px;
+}
